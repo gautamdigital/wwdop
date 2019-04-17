@@ -1,0 +1,1 @@
+var _BASE_URL ="http://localhost:8087/ShoppingCartApp/";

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.shopping.entity.Orders" table="orders">
+		<id name="order_id" type="java.lang.Integer">
+			<column name="order_id" />
+			<generator class="identity" />
+		</id>
+		<property name="order_time" type="date">
+			<column name="order_time" />
+		</property>
+		<property name="cust_first_name" type="string">
+			<column name="cust_first_name" length="60" />
+		</property>
+		<property name="other_names" type="string">
+			<column name="other_names" length="60" />
+		</property>
+		<property name="cust_last_name" type="string">
+			<column name="cust_last_name" length="60" />
+		</property>
+		<property name="cust_email" type="string">
+			<column name="cust_email" length="60" />
+		</property>
+		<property name="cust_zip" type="string">
+			<column name="cust_zip" length="60" />
+		</property>
+		<property name="cust_state" type="string">
+			<column name="cust_state" length="60" />
+		</property>
+		<property name="cust_city" type="string">
+			<column name="cust_city" length="60" />
+		</property>
+		<property name="cust_country" type="string">
+			<column name="cust_country" length="60" />
+		</property>
+		<property name="cust_phone" type="string">
+			<column name="cust_phone" length="60" />
+		</property>
+		<property name="cust_fax" type="string">
+			<column name="cust_fax" />
+		</property>
+		<property name="credit_card_type" type="string">
+			<column name="credit_card_type" length="60" />
+		</property>
+		<property name="card_holder_name" type="string">
+			<column name="card_holder_name" length="60" />
+		</property>
+		<property name="credit_card_number" type="string">
+			<column name="credit_card_number" length="60" />
+		</property>
+		<property name="expiration_date" type="date">
+			<column name="expiration_date" />
+		</property>
+
+		<property name="customer_notes" type="string">
+			<column name="customer_notes" length="60" />
+		</property>
+
+		<property name="cvv_number" type="string">
+			<column name="cvv_number" />
+		</property>
+
+		<property name="purchase_price" type="string">
+			<column name="purchase_price" length="60" />
+		</property>
+
+
+		<property name="plan_creation_type" type="string">
+			<column name="plan_creation_type" length="60" />
+		</property>
+
+		<property name="retailer_order_no" type="string">
+			<column name="retailer_order_no" length="60" />
+		</property>
+		<property name="charge_back_count" type="string">
+			<column name="charge_back_count" length="60" />
+		</property>
+		<property name="customer_quality" type="string">
+			<column name="customer_quality" length="60" />
+		</property>
+		<property name="dob" type="date">
+			<column name="dob" />
+		</property>
+		<property name="gender" type="string">
+			<column name="gender" length="60" />
+		</property>
+		<property name="res_address1" type="string">
+			<column name="res_address1" length="60" />
+		</property>
+		<property name="res_address2" type="string">
+			<column name="res_address2" length="60" />
+		</property>
+		<property name="res_suburb" type="string">
+			<column name="res_suburb" length="60" />
+		</property>
+		<property name="del_address1" type="string">
+			<column name="del_address1" length="60" />
+		</property>
+		<property name="del_address2" type="string">
+			<column name="del_address2" length="60" />
+		</property>
+		<property name="del_suburb" type="string">
+			<column name="del_suburb" length="60" />
+		</property>
+		<property name="del_postcode" type="string">
+			<column name="del_postcode" length="60" />
+		</property>
+		<property name="del_state" type="string">
+			<column name="del_state" length="60" />
+		</property>
+		<property name="tender_name" type="string">
+			<column name="tender_name" length="60" />
+		</property>
+		<property name="amount" type="string">
+			<column name="amount" length="60" />
+		</property>
+		<property name="payment_type" type="string">
+			<column name="payment_type" length="60" />
+		</property>
+		<property name="user_id" type="java.lang.Integer">
+			<column name="user_id" />
+		</property>
+
+	</class>
+</hibernate-mapping>

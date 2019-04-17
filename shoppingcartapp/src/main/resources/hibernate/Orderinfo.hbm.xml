@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.shopping.entity.OrderInfo" table="orderinfo">
+		<id name="id" type="java.lang.Integer">
+			<column name="id" />
+		</id>
+		<property name="jam_plan_id" type="string">
+			<column name="jam_plan_id" length="60" />
+		</property>
+		<property name="openpay_order_id" type="string">
+			<column name="openpay_order_id"  length="60"  />
+		</property>
+		<property name="new_online_order_status" type="string">
+			<column name="new_online_order_status"  length="60" />
+		</property>
+		<property name="new_online_order_capture_status"
+			type="string">
+			<column name="new_online_order_capture_status"  length="60" />
+		</property>
+		<property name="online_order_status" type="string">
+			<column name="online_order_status"  length="60" />
+		</property>
+		<property name="order_approve_status" type="string">
+			<column name="order_approve_status"  length="60" />
+		</property>
+		<property name="online_order_reduction_status" type="string">
+			<column name="online_order_reduction_status"  length="60" />
+		</property>
+		<property name="reduction_amount" type="double">
+			<column name="reduction_amount"  length="60" />
+		</property>
+		<property name="order_dispatch_status" type="string">
+			<column name="order_dispatch_status"  length="60" />
+		</property>
+		<property name="min_max_purchase_price_status" type="string">
+			<column name="min_max_purchase_price_status"  length="60" />
+		</property>
+
+		<property name="order_fraud_alert_status" type="string">
+			<column name="order_fraud_alert_status"  length="60" />
+		</property>
+
+	</class>
+</hibernate-mapping>

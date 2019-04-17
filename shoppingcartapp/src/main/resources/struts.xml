@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.devMode" value="true"></constant>
+	<constant name="struts.enable.SlashesInActionNames"
+		value="true" />
+	<constant name="struts.mapper.alwaysSelectFullNamespace"
+		value="false" />
+	<constant name="struts.patternMatcher" value="regex" />
+
+	<package name="products" namespace="/" extends="struts-default">
+
+		<action name="product"
+			class="com.shopping.action.ProductAction" method="listAllProducts">
+			<result name="SUCCESS">/productlist.jsp</result>
+			<result name="ERROR">/error.jsp</result>
+		</action>
+
+		<action name="product/{productId}"
+			class="com.shopping.action.ProductAction" method="productById">
+			<result name="SUCCESS">/product_details.jsp</result>
+			<result name="ERROR">/error.jsp</result>
+		</action>
+
+		<action name="viewproduct"
+			class="com.shopping.action.ProductAction" method="productById">
+			<result name="SUCCESS">/product_details.jsp</result>
+			<result name="ERROR">/error.jsp</result>
+		</action>
+
+		<action name="cartlist" class="com.shopping.action.CartAction"
+			method="listcarts">
+			<result name="SUCCESS">/cart.jsp</result>
+			<result name="ERROR">/error.jsp</result>
+		</action>
+
+		<action name="checkout"
+			class="com.shopping.action.CheckoutAction" method="execute">
+			<result name="success">/checkout.jsp</result>
+			<result name="ERROR">/error.jsp</result>
+		</action>
+		<action name="makeorder"
+			class="com.shopping.action.OrderAction" method="execute">
+			<result name="redirect" type="redirect">${url}</result>
+		</action>
+		<action name="orderinfolist"
+			class="com.shopping.action.OrderAction" method="fetchAllorderinfo">
+			<result name="SUCCESS">/orderinfo.jsp</result>
+			<result name="ERROR">/error.jsp</result>
+
+		</action>
+	</package>
+
+	<package name="default" namespace="/user"
+		extends="json-default">
+		<action name="login" class="com.shopping.action.LoginAction"
+			method="checkUser">
+			<result name="json"></result>
+		</action>
+		
+		<action name="capturepayment" class="com.shoping.payment.OnlineOrderCapturePayment"
+			method="capturePayment">
+			<result name="json"></result>
+		</action>
+		
+		
+	</package>
+	
+	<package name="default" namespace="/cappayment"
+	extends="json-default">
+		<action name="capturepayment" class="com.shoping.payment.OnlineOrderCapturePayment"
+			method="capturePayment">
+			<result name="json"></result>
+		</action>
+	</package>
+
+	<package name="cart" namespace="/cart" extends="json-default">
+		<action name="addToCart" class="com.shopping.action.CartAction"
+			method="savecarts">
+			<result type="json" />
+		</action>
+		
+		<action name="checkorderstatus" class="com.shoping.payment.OnlineOrderStatus"
+			method="onlineOrderStatus">
+			<result name="json"></result>
+		</action>
+		
+		
+		<action name="orderrefund" class="com.shoping.payment.OnlineOrderReduction"
+			method="onlineOrderReduction">
+			<result name="json"></result>
+		</action>
+		
+		<action name="orderdispatch" class="com.shoping.payment.OnlineOrderDispatchPlan"
+			method="onlineOrderDispatchPlan">
+			<result name="json"></result>
+		</action>
+		<action name="fraudalert" class="com.shoping.payment.OnlineOrderFraudAlert"
+			method="onlineOrderFraudAlert">
+			<result name="json"></result>
+		</action>
+
+	</package>
+
+
+
+
+</struts>

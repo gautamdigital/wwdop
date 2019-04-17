@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.shopping.entity.Product" table="product">
+		<id name="product_id" type="java.lang.Integer">
+			<column name="product_id" />
+			<generator class="identity" />
+		</id>
+		<property name="category_id" type="java.lang.Integer">
+			<column name="category_id" length="11" />
+		</property>
+		<property name="product_name" type="string">
+			<column name="product_name" length="60" />
+		</property>
+		<property name="product_price" type="string">
+			<column name="product_price" length="40" />
+		</property>
+		<property name="list_price" type="string">
+			<column name="list_price" length="20" />
+		</property>
+		<property name="image_name" type="string">
+			<column name="image_name" length="60" />
+		</property>
+		<property name="quantity" type="java.lang.Integer">
+			<column name="quantity" length="11" />
+		</property>
+		<property name="description" type="string">
+			<column name="description" length="80" />
+		</property>
+		<property name="brief_desc" type="string">
+			<column name="brief_desc" />
+		</property>
+	</class>
+</hibernate-mapping>

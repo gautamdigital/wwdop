@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.shopping.entity.Orderedcarts" table="orderedcarts">
+		<id name="id" type="java.lang.Integer">
+			<column name="id" />
+			<generator class="identity" />
+		</id>
+		<property name="product_id" type="java.lang.Integer">
+			<column name="product_id" />
+		</property>
+		<property name="order_id" type="java.lang.Integer">
+			<column name="order_id" />
+		</property>
+		<property name="product_name" type="string">
+			<column name="product_name" length="60" />
+		</property>
+		<property name="price" type="double">
+			<column name="price" />
+		</property>
+		<property name="quantity" type="java.lang.Integer">
+			<column name="quantity" />
+		</property>
+		<property name="user_id" type="java.lang.Integer">
+			<column name="user_id" />
+		</property>
+		<property name="status" type="string">
+			<column name="status" />
+		</property>
+
+	</class>
+</hibernate-mapping>
